@@ -1,0 +1,68 @@
+{
+  "name": "react-native-svg-transformer",
+  "version": "0.10.0",
+  "description": "SVG transformer for react-native",
+  "main": "index.js",
+  "repository": "https://github.com/kristerkari/react-native-svg-transformer",
+  "scripts": {
+    "release": "npmpub",
+    "precommit": "lint-staged",
+    "test": "eslint ."
+  },
+  "author": "Krister Kari",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "react-native-svg-loader": "^0.1.5",
+    "semver": "^5.5.0"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.45.0",
+    "react-native-svg": ">=6.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "npmpub": "^4.0.1",
+    "prettier": "^1.13.7"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "rules": {
+      "space-before-function-paren": [
+        2,
+        "never"
+      ],
+      "semi": [
+        2,
+        "always"
+      ],
+      "quotes": [
+        2,
+        "double"
+      ],
+      "no-else-return": 2
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "none"
+  }
+}
