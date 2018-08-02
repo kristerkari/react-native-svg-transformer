@@ -7,6 +7,9 @@ Load SVG files in React Native.
 
 **Limitations:** React Native's packager does not currently support running the transformer for `.svg` file extension. That is why a `.svgx` file extension should be used instead for your SVG files. This will hopefully be fixed in the future versions of React Native. Read more: [facebook/metro/issues/176#issuecomment-393202582](https://github.com/facebook/metro/issues/176#issuecomment-393202582)
 
+**Demo app**
+[react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+
 ## Installation and configuration
 
 ### Step 1: Install react-native-svg library
