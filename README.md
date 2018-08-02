@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/react-native-svg-transformer.svg)](https://www.npmjs.org/package/react-native-svg-transformer)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-Load SVG files with React Native.
+Load SVG files in React Native.
 
 **Limitations:** React Native's packager does not currently support running the transformer for `.svg` file extension. That is why a `.svgx` file extension should be used instead for your SVG files. This will hopefully be fixed in the future versions of React Native.
 
