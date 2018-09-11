@@ -30,7 +30,7 @@ module.exports.transform = function(src, filename, options) {
     ({ src, filename, options } = src);
   }
 
-  if (filename.endsWith(".svgx")) {
+  if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
     return upstreamTransformer.transform({
       src: transformSvgSync(src),
       filename,
