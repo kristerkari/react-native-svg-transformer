@@ -5,6 +5,8 @@
 
 Load SVG files in React Native.
 
+<a href="https://facebook.github.io/react-native/"><img src="images/react-native-logo.png" width="160"></a><img src="images/plus.svg" width="100"><img src="images/svg-logo.svg" width="160">
+
 **Demo app:** [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
 
 ## Installation and configuration
