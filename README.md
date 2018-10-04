@@ -65,6 +65,8 @@ module.exports = (async () => {
 })();
 ```
 
+---
+
 #### For React Native v0.56 or older
 
 React Native versions older than 0.57 do not support running the transformer for `.svg` file extension. That is why a `.svgx` file extension should be used instead for your SVG files. This is fixed in React Native 0.57 and newer versions.
