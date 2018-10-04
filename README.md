@@ -4,11 +4,29 @@
 [![Downloads per month](https://img.shields.io/npm/dm/react-native-svg-transformer.svg)](http://npmcharts.com/compare/react-native-svg-transformer?periodLength=30)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
-Load SVG files in React Native.
-
 <a href="https://facebook.github.io/react-native/"><img src="images/react-native-logo.png" width="160"></a><img src="images/plus.svg" width="100"><img src="images/svg-logo.svg" width="160">
 
-**Demo app:** [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+React Native SVG transformer allows you import SVG files in your React Native project the same way that you would in a Web application when a using library like [SVGR](https://github.com/smooth-code/svgr/tree/master/packages/webpack#svgrwebpack) to transform your imported SVG images into React components.
+
+This makes it easy to use the same code for React Native and Web.
+
+### Usage
+
+Import your `.svg` file inside a React component:
+
+```jsx
+import Logo from "./logo.svg";
+```
+
+You can then use your image as a component:
+
+```jsx
+<Logo width={120} height={40} />
+```
+
+_If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
+
+**iOS/Android/Web demo app:** [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
 
 ## Installation and configuration
 
@@ -79,21 +97,6 @@ module.exports = {
 }
 ```
 
-### Usage
-
-Import your `.svg` file inside a React component:
-
-```jsx
-import Logo from "./logo.svg";
-```
-
-You can then use your image as a component:
-
-```jsx
-<Logo width={120} height={40} />
-```
-
-_If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
 
 ### Dependencies
 
