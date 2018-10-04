@@ -6,7 +6,7 @@ React Native SVG transformer allows you import SVG files in your React Native pr
 
 This makes it easy to use the same code for React Native and Web.
 
-### Usage
+## Usage
 
 Import your `.svg` file inside a React component:
 
@@ -22,7 +22,9 @@ You can then use your image as a component:
 
 _If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
 
-**iOS/Android/Web demo app:** [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+### Demo (iOS/Android/Web)
+
+* [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
 
 ## Installation and configuration
 
