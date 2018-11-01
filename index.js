@@ -1,5 +1,5 @@
 var semver = require("semver");
-var transformSvgSync = require("react-native-svg-loader");
+var transformSvgSync = require("react-native-svg-loader-fork");
 
 var upstreamTransformer = null;
 
