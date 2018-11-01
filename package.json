@@ -17,7 +17,7 @@
     "README.md"
   ],
   "dependencies": {
-    "react-native-svg-loader": "kristerkari/react-native-svg-loader#bugfix/dont-change-transform-to-translate",
+    "react-native-svg-loader-fork": "^0.1.5",
     "semver": "^5.5.1"
   },
   "peerDependencies": {

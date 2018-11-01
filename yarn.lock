@@ -1710,9 +1710,10 @@ punycode@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
-react-native-svg-loader@kristerkari/react-native-svg-loader#bugfix/dont-change-transform-to-translate:
+react-native-svg-loader-fork@^0.1.5:
   version "0.1.5"
-  resolved "https://codeload.github.com/kristerkari/react-native-svg-loader/tar.gz/b2de797c5e2c33354399f42cae789f967bb509ba"
+  resolved "https://registry.yarnpkg.com/react-native-svg-loader-fork/-/react-native-svg-loader-fork-0.1.5.tgz#002305912d12322f97dbd0d4c992941698a23023"
+  integrity sha512-qNHUFps/PLsM2+ZTS3YHzrJwwatSkGrVWIPTWX26dqfOf131nbQgfXMG5aO/W/LY0LggY2X+6USInBiViuViKw==
   dependencies:
     xmldom "^0.1.27"
 
