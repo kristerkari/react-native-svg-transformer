@@ -1,3 +1,7 @@
+## v0.11.3
+
+- Fixed: broken `require` for `react-native-svg-loader` fork.
+
 ## v0.11.2
 
 - Fixed: use a fork of `react-native-svg-loader` from npm.
