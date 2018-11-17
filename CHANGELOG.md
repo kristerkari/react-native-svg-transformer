@@ -1,3 +1,7 @@
+## v0.12.0
+
+- Changed: use `@svgr/core` instead of `react-native-svg-loader` to transform SVG images to React Native components.
+
 ## v0.11.3
 
 - Fixed: broken `require` for `react-native-svg-loader` fork.
