@@ -103,3 +103,4 @@ In addition to React Native, this transfomer depends on the following libraries:
 
 - [react-native-svg](https://github.com/magicismight/react-native-svg#readme)
 - [@svgr/core](https://github.com/smooth-code/svgr/tree/master/packages/core)
+- [semver](https://github.com/npm/node-semver#readme)
