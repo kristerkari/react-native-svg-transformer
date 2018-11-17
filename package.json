@@ -17,7 +17,7 @@
     "README.md"
   ],
   "dependencies": {
-    "react-native-svg-loader-fork": "^0.1.5",
+    "@svgr/core": "^4.0.3",
     "semver": "^5.5.1"
   },
   "peerDependencies": {
