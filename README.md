@@ -1,4 +1,4 @@
-# react-native-svg-transformer [![NPM version](http://img.shields.io/npm/v/react-native-svg-transformer.svg)](https://www.npmjs.org/package/react-native-svg-transformer) [![Downloads per month](https://img.shields.io/npm/dm/react-native-svg-transformer.svg)](http://npmcharts.com/compare/react-native-svg-transformer?periodLength=30)  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+# react-native-svg-transformer [![NPM version](http://img.shields.io/npm/v/react-native-svg-transformer.svg)](https://www.npmjs.org/package/react-native-svg-transformer) [![Downloads per month](https://img.shields.io/npm/dm/react-native-svg-transformer.svg)](http://npmcharts.com/compare/react-native-svg-transformer?periodLength=30) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-native-logo.png" width="160"></a><img src="images/plus.svg" width="100"><img src="images/svg-logo.svg" width="160">
 
@@ -24,7 +24,7 @@ _If you use React Native version 0.56 or older, you need to rename your `.svg` f
 
 ### Demo (iOS/Android/Web)
 
-* [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+- [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
 
 ## Installation and configuration
 
@@ -97,10 +97,9 @@ module.exports = {
 }
 ```
 
-
 ### Dependencies
 
 In addition to React Native, this transfomer depends on the following libraries:
 
 - [react-native-svg](https://github.com/magicismight/react-native-svg#readme)
-- [react-native-svg-loader](https://github.com/unimonkiez/react-native-svg-loader)
+- [@svgr/core](https://github.com/smooth-code/svgr/tree/master/packages/core)

@@ -1,5 +1,5 @@
 var semver = require("semver");
-var transformSvgSync = require("react-native-svg-loader-fork");
+var svgr = require("@svgr/core").default;
 
 var upstreamTransformer = null;
 
@@ -24,6 +24,18 @@ if (reactNativeMinorVersion >= 56) {
   };
 }
 
+function xlinkHrefToHref(svgrOutput) {
+  return svgrOutput.replace(/xlinkHref=/g, "href=");
+}
+
+function xmlnsSvgToXmlns(svgrOutput) {
+  return svgrOutput.replace(/xmlns:svg=/gi, "xmlns=");
+}
+
+function fixRenderingBugs(svgrOutput) {
+  return xmlnsSvgToXmlns(xlinkHrefToHref(svgrOutput));
+}
+
 module.exports.transform = function(src, filename, options) {
   if (typeof src === "object") {
     // handle RN >= 0.46
@@ -31,8 +43,9 @@ module.exports.transform = function(src, filename, options) {
   }
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
+    var jsCode = svgr.sync(src, { native: true });
     return upstreamTransformer.transform({
-      src: transformSvgSync(src),
+      src: fixRenderingBugs(jsCode),
       filename,
       options
     });
