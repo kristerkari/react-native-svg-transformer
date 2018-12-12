@@ -22,6 +22,17 @@ You can then use your image as a component:
 
 _If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
 
+### Color override
+
+You can override the color defined in SVG input file in your React component.
+For this, you can use the component like this:
+
+```
+<Logo color="#000000" />
+```
+
+And change your `rn-cli.config.js` file to use `without-color.js` file instead of `index.js`.
+
 ### Demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
@@ -41,6 +52,8 @@ yarn add --dev react-native-svg-transformer
 ```
 
 ### Step 3: Configure the react native packager
+
+_If you need to remove the color defined in SVG files, use `without-color.js` instead of `index.js`._
 
 #### For React Native v0.57 or newer
 

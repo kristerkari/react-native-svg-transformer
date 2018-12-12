@@ -32,6 +32,10 @@ function xmlnsSvgToXmlns(svgrOutput) {
   return svgrOutput.replace(/xmlns:svg=/gi, "xmlns=");
 }
 
+function removeColor(svgrOutput) {
+  return svgrOutput.replace(/fill=\"([#0-9a-fA-F]+)\"/gi, '');
+}
+
 function fixRenderingBugs(svgrOutput) {
   return xmlnsSvgToXmlns(xlinkHrefToHref(svgrOutput));
 }
@@ -44,6 +48,10 @@ module.exports.transform = function(src, filename, options) {
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
     var jsCode = svgr.sync(src, { native: true });
+    if (options.removeSvgColor) {
+      delete options.removeSvgColor;
+      jsCode = removeColor(jsCode);
+    }
     return upstreamTransformer.transform({
       src: fixRenderingBugs(jsCode),
       filename,
