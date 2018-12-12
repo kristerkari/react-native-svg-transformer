@@ -1,4 +1,4 @@
-var defaultTransformer = require('.');
+var defaultTransformer = require(".");
 
 module.exports.transform = function(src, filename, options) {
   if (typeof src === "object") {

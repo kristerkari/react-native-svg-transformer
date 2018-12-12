@@ -33,7 +33,7 @@ function xmlnsSvgToXmlns(svgrOutput) {
 }
 
 function removeColor(svgrOutput) {
-  return svgrOutput.replace(/fill=\"([#0-9a-fA-F]+)\"/gi, '');
+  return svgrOutput.replace(/fill="([#0-9a-fA-F]+)"/gi, "");
 }
 
 function fixRenderingBugs(svgrOutput) {
