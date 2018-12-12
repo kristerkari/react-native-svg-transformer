@@ -97,7 +97,7 @@ module.exports = {
 };
 ```
 
-...or if you are using [Expo](https://expo.io/), in `app.json`:
+...or if you are using [Expo](https://expo.io/), in `app.json`):
 
 ```json
 {
