@@ -24,6 +24,10 @@ if (reactNativeMinorVersion >= 56) {
   };
 }
 
+// xlink:href is supported in react-native-svg
+// starting from version 9.0.4.
+//
+// TODO: remove this fix in v1.0.0.
 function xlinkHrefToHref(svgrOutput) {
   return svgrOutput.replace(/xlinkHref=/g, "href=");
 }
