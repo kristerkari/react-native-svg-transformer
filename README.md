@@ -44,7 +44,7 @@ yarn add --dev react-native-svg-transformer
 
 #### For React Native v0.57 or newer
 
-Add this to your `rn-cli.config.js` (create the file if it does not exist already):
+Add this to your `metro.config.js` (create the file if it does not exist already):
 
 ```js
 const { getDefaultConfig } = require("metro-config");
