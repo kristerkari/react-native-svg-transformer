@@ -1,3 +1,9 @@
+## v0.12.1
+
+- Fixed: Compatibility with react-native v0.59.
+- Updated: `@svgr/core` dependency to v4.1.0.
+- Updated: `semver` dependency to v5.6.0.
+
 ## v0.12.0
 
 - Changed: use `@svgr/core` instead of `react-native-svg-loader` to transform SVG images to React Native components.
