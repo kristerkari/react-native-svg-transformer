@@ -42,7 +42,7 @@ yarn add --dev react-native-svg-transformer
 
 ### Step 3: Configure the react native packager
 
-#### For React Native v0.57 or newer
+#### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
 
 Add this to your `metro.config.js` (create the file if it does not exist already):
 
@@ -65,6 +65,18 @@ module.exports = (async () => {
 })();
 ```
 
+If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
+
+```json
+{
+  "expo": {
+    "packagerOpts": {
+      "config": "metro.config.js"
+    }
+  }
+}
+```
+
 ---
 
 #### For React Native v0.56 or older
@@ -84,7 +96,11 @@ module.exports = {
 };
 ```
 
-...or if you are using [Expo](https://expo.io/), in `app.json`:
+---
+
+#### For Expo SDK v30.0.0 or older
+
+If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.js` file, you need to add this to `app.json`:
 
 ```json
 {
