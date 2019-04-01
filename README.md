@@ -44,7 +44,9 @@ yarn add --dev react-native-svg-transformer
 
 #### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
 
-Add this to your `metro.config.js` (create the file if it does not exist already):
+Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+
+`metro.config.js`:
 
 ```js
 const { getDefaultConfig } = require("metro-config");
