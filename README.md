@@ -28,6 +28,18 @@ _If you use React Native version 0.56 or older, you need to rename your `.svg` f
 
 Read more about the configuration options: [Configuring SVGR](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/configuration-files.mdx) and [SVGR options](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/options.mdx).
 
+For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this fill be used for all SVG images in your app).
+
+`.svgrrc`
+
+```json
+{
+  "replaceAttrValues": {
+    "red": "currentColor"
+  }
+}
+```
+
 ### Demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
