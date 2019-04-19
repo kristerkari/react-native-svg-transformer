@@ -1,3 +1,7 @@
+## v0.13.0
+
+- Added: support for SVGR configuration file.
+
 ## v0.12.1
 
 - Fixed: Compatibility with react-native v0.59.
