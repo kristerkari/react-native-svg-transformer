@@ -22,6 +22,24 @@ You can then use your image as a component:
 
 _If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
 
+### Configuring SVGR (how SVG images get transformed)
+
+[SVGR](https://github.com/smooth-code/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
+
+Read more about the configuration options: [Configuring SVGR](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/configuration-files.mdx) and [SVGR options](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/options.mdx).
+
+For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this fill be used for all SVG images in your app).
+
+`.svgrrc`
+
+```json
+{
+  "replaceAttrValues": {
+    "red": "currentColor"
+  }
+}
+```
+
 ### Demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
