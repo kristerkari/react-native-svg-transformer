@@ -50,7 +50,7 @@ module.exports.transform = function(src, filename, options) {
   }
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
-    var config = resolveConfig.sync(__dirname);
+    var config = resolveConfig.sync(process.cwd());
     var defaultsvgrConfig = { native: true };
     var svgrConfig = config
       ? Object.assign({}, defaultsvgrConfig, config)
