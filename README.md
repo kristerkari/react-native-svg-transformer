@@ -4,7 +4,7 @@
 
 React Native SVG transformer allows you import SVG files in your React Native project the same way that you would in a Web application when a using library like [SVGR](https://github.com/smooth-code/svgr/tree/master/packages/webpack#svgrwebpack) to transform your imported SVG images into React components.
 
-This makes it easy to use the same code for React Native and Web.
+This makes it possible to use the same code for React Native and Web.
 
 ## Usage
 
