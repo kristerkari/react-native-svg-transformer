@@ -121,7 +121,7 @@ If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.
 
 Read more about the configuration options: [Configuring SVGR](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/configuration-files.mdx) and [SVGR options](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/options.mdx).
 
-For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this fill be used for all SVG images in your app).
+For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this will be used for all SVG images in your app).
 
 `.svgrrc`
 
