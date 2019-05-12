@@ -115,6 +115,14 @@ If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.
 }
 ```
 
+### Using TypeScript
+
+If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
+
+```ts
+declare module "*.svg";
+```
+
 ### Configuring SVGR (how SVG images get transformed)
 
 [SVGR](https://github.com/smooth-code/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
