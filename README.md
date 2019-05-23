@@ -120,7 +120,11 @@ If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.
 If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
 
 ```ts
-declare module "*.svg";
+declare module '*.svg' {
+  import { SvgProps } from 'react-native-svg'
+  const content: React.ComponentClass<SvgProps, any>
+  export default content
+}
 ```
 
 ### Configuring SVGR (how SVG images get transformed)
