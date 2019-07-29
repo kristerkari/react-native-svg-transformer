@@ -145,6 +145,33 @@ For example, if you want to change SVG image's fill color from `red` to `current
 }
 ```
 
+#### Changing SVG fill color in JS Code
+
+Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.color}**
+
+```json
+{
+  "replaceAttrValues": {
+    "#000": "{props.color}"
+  }
+}
+```
+
+And then make sure your path tag inside the SVG file `fill` attribute is the hex code (in this case `#000`).
+
+```xml
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2.965 6.0925C4.045 8.215 ..." fill="#000"/>
+</svg>
+```
+
+You can then use your image as a component:
+
+```jsx
+<Logo width={120} height={40} color={'any color'} />
+```
+
+
 ### Dependencies
 
 In addition to React Native, this transfomer depends on the following libraries:
