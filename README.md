@@ -172,6 +172,40 @@ You can then use your image as a component:
 <Logo width={120} height={40} fill={"any color"} />
 ```
 
+### Usage with Jest
+
+To use `Jest` to test your React Native components that import `.svg` images, you need to add this configuration that mocks the SVG images that are transformed to React components:
+
+```js
+// __mocks__/svgMock.js
+module.exports = "SvgMock";
+module.exports.ReactComponent = "SvgMock";
+```
+
+Then, depending on where you have your Jest configuration:
+
+```json
+// package.json
+{
+  "jest": {
+    "moduleNameMapper": {
+      "\\.svg": "<rootDir>/__mocks__/svgMock.js"
+    }
+  }
+}
+```
+
+or
+
+```js
+// jest.config.js
+module.exports = {
+  moduleNameMapper: {
+    "\\.svg": "<rootDir>/__mocks__/svgMock.js"
+  }
+};
+```
+
 ### Dependencies
 
 In addition to React Native, this transfomer depends on the following libraries:
