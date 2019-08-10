@@ -148,12 +148,12 @@ For example, if you want to change SVG image's fill color from `red` to `current
 
 #### Changing SVG fill color in JS Code
 
-Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.color}**
+Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.fill}**
 
 ```json
 {
   "replaceAttrValues": {
-    "#000": "{props.color}"
+    "#000": "{props.fill}"
   }
 }
 ```
@@ -169,7 +169,7 @@ And then make sure your path tag inside the SVG file `fill` attribute is the hex
 You can then use your image as a component:
 
 ```jsx
-<Logo width={120} height={40} color={'any color'} />
+<Logo width={120} height={40} fill={'any color'} />
 ```
 
 
