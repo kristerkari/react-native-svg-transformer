@@ -72,9 +72,9 @@ If you are using [Expo](https://expo.io/), you also need to add this to `app.jso
 ```json
 {
   "expo": {
-    "packagerOpts": { 
-      "config": "metro.config.js", 
-      "sourceExts": ["js", "jsx", "svg"] 
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "svg"]
     }
   }
 }
@@ -121,10 +121,10 @@ If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.
 If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
 
 ```ts
-declare module '*.svg' {
-  import { SvgProps } from 'react-native-svg'
-  const content: React.ComponentClass<SvgProps, any>
-  export default content
+declare module "*.svg" {
+  import { SvgProps } from "react-native-svg";
+  const content: React.ComponentClass<SvgProps, any>;
+  export default content;
 }
 ```
 
@@ -169,9 +169,8 @@ And then make sure your path tag inside the SVG file `fill` attribute is the hex
 You can then use your image as a component:
 
 ```jsx
-<Logo width={120} height={40} fill={'any color'} />
+<Logo width={120} height={40} fill={"any color"} />
 ```
-
 
 ### Dependencies
 
