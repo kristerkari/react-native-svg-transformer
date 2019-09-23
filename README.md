@@ -74,7 +74,7 @@ If you are using [Expo](https://expo.io/), you also need to add this to `app.jso
   "expo": {
     "packagerOpts": {
       "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "svg"]
+      "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
     }
   }
 }
