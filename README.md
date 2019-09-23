@@ -67,21 +67,6 @@ module.exports = (async () => {
 })();
 ```
 
-##### For Expo SDK v35.0.0 or newer
-If you are using [Expo](https://expo.io/) v35.0.0, you also need to add "ts" and "tsx" in sourceExts on `app.json`:
-
-```json
-{
-  "expo": {
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
-    }
-  }
-}
-```
-
-##### For Expo SDK v31.0.0 or newer
 If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
 
 ```json
@@ -89,7 +74,7 @@ If you are using [Expo](https://expo.io/), you also need to add this to `app.jso
   "expo": {
     "packagerOpts": {
       "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "svg"]
+      "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
     }
   }
 }
