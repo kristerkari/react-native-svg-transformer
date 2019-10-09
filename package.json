@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "@svgr/core": "^4.1.0",
+    "path-dirname": "^1.0.2",
     "semver": "^5.6.0"
   },
   "peerDependencies": {

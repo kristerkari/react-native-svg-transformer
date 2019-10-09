@@ -1,6 +1,7 @@
 var semver = require("semver");
 var svgr = require("@svgr/core").default;
 var resolveConfig = require("@svgr/core").resolveConfig;
+var resolveConfigDir = require("path-dirname");
 
 var upstreamTransformer = null;
 
@@ -50,7 +51,7 @@ module.exports.transform = function(src, filename, options) {
   }
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
-    var config = resolveConfig.sync(process.cwd());
+    var config = resolveConfig.sync(resolveConfigDir(filename));
     var defaultsvgrConfig = { native: true };
     var svgrConfig = config
       ? Object.assign({}, defaultsvgrConfig, config)
