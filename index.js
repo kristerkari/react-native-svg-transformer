@@ -46,6 +46,7 @@ function fixRenderingBugs(svgrOutput) {
 
 var defaultsvgrConfig = {
   native: true,
+  plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
   svgoConfig: {
     plugins: [
       {
