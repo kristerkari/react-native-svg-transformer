@@ -44,6 +44,20 @@ function fixRenderingBugs(svgrOutput) {
   return xmlnsSvgToXmlns(xlinkHrefToHref(svgrOutput));
 }
 
+var defaultsvgrConfig = {
+  native: true,
+  plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+  svgoConfig: {
+    plugins: [
+      {
+        inlineStyles: {
+          onlyMatchedOnce: false,
+        },
+      },
+    ],
+  },
+};
+
 module.exports.transform = function(src, filename, options) {
   if (typeof src === "object") {
     // handle RN >= 0.46
@@ -52,7 +66,6 @@ module.exports.transform = function(src, filename, options) {
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
     var config = resolveConfig.sync(resolveConfigDir(filename));
-    var defaultsvgrConfig = { native: true };
     var svgrConfig = config
       ? Object.assign({}, defaultsvgrConfig, config)
       : defaultsvgrConfig;
