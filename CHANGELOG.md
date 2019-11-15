@@ -1,3 +1,9 @@
+## v0.14.0
+
+- Added: support for looking up SVGR config location based on asset path.
+- Fixed: configure SVGR to use SVGO and inline styles when there are multiple selector matches.
+- Updated: `@svgr/core` dependency to v4.3.3.
+
 ## v0.13.0
 
 - Added: support for SVGR configuration file.
