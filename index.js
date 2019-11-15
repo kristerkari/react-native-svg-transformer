@@ -53,6 +53,9 @@ var defaultsvgrConfig = {
         inlineStyles: {
           onlyMatchedOnce: false
         }
+      },
+      {
+        removeViewBox: false
       }
     ]
   }
