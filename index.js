@@ -46,16 +46,16 @@ function fixRenderingBugs(svgrOutput) {
 
 var defaultsvgrConfig = {
   native: true,
-  plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+  plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
   svgoConfig: {
     plugins: [
       {
         inlineStyles: {
-          onlyMatchedOnce: false,
-        },
-      },
-    ],
-  },
+          onlyMatchedOnce: false
+        }
+      }
+    ]
+  }
 };
 
 module.exports.transform = function(src, filename, options) {
