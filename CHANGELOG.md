@@ -1,3 +1,7 @@
+## v0.14.1
+
+- Fixed: enabling SVGO was removing the `viewBox` attribute from SVG images, which caused the default size of the image not be applied correctly.
+
 ## v0.14.0
 
 - Added: support for looking up SVGR config location based on asset path.
