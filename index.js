@@ -56,6 +56,9 @@ var defaultsvgrConfig = {
       },
       {
         removeViewBox: false
+      },
+      {
+        removeUnknownsAndDefaults: false
       }
     ]
   }
