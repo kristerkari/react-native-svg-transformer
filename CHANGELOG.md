@@ -1,3 +1,7 @@
+## v0.14.2
+
+- Fixed: images with "width=100%" and/or "height=100%" were not displayed correctly. Disabled SVGO default setting to remove attributes with default values.
+
 ## v0.14.1
 
 - Fixed: enabling SVGO was removing the `viewBox` attribute from SVG images, which caused the default size of the image not be applied correctly.
