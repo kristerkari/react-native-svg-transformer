@@ -59,6 +59,9 @@ var defaultsvgrConfig = {
       },
       {
         removeUnknownsAndDefaults: false
+      },
+      {
+        convertColors: false
       }
     ]
   }
