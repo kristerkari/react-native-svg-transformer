@@ -1,6 +1,6 @@
 ## v0.14.3
 
-- Fixed: SVGO was chaning colors to shorthand format, which caused SVGR attribute replacement with colors not to work correctly.
+- Fixed: SVGO was changing colors to shorthand format, which caused SVGR attribute replacement with colors not to work correctly.
 
 ## v0.14.2
 
