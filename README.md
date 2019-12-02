@@ -146,6 +146,8 @@ For example, if you want to change SVG image's fill color from `red` to `current
 }
 ```
 
+In order to make it work your .svgrrc file should be placed in your assets directory (where .svg files are located).
+
 #### Changing SVG fill color in JS Code
 
 Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.fill}**
