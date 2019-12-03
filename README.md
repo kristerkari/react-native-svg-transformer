@@ -123,7 +123,7 @@ If you are using TypeScript, you need to add this to your `declarations.d.ts` fi
 ```ts
 declare module "*.svg" {
   import { SvgProps } from "react-native-svg";
-  const content: React.StatelessComponent<SvgProps>;
+  const content: React.FC<SvgProps>;
   export default content;
 }
 ```
