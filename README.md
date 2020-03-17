@@ -148,7 +148,7 @@ Read more about the configuration options: [Configuring SVGR](https://github.com
 
 For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this will be used for all SVG images in your app).
 
-`.svgrrc`
+`.svgrrc` (create the file in your project's root folder if it does not exist)
 
 ```json
 {
