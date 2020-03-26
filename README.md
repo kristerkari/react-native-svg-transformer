@@ -218,6 +218,11 @@ module.exports = {
 };
 ```
 
+### Rendering custom fonts in iOS
+
+At the moment [react-native-svg](https://github.com/magicismight/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file. 
+
+
 ### Dependencies
 
 In addition to React Native, this transfomer depends on the following libraries:
