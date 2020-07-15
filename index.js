@@ -2,11 +2,18 @@ var semver = require("semver");
 var svgr = require("@svgr/core").default;
 var resolveConfig = require("@svgr/core").resolveConfig;
 var resolveConfigDir = require("path-dirname");
+var path = require("path");
 
 var upstreamTransformer = null;
 
 var reactNativeVersionString = require("react-native/package.json").version;
 var reactNativeMinorVersion = semver(reactNativeVersionString).minor;
+var projectRoot = process.cwd();
+
+if (reactNativeMinorVersion >= 63) {
+  var loadRNConfig = require("@react-native-community/cli/build/tools/config").default;
+  projectRoot = loadRNConfig().root;
+}
 
 if (reactNativeMinorVersion >= 59) {
   upstreamTransformer = require("metro-react-native-babel-transformer");
@@ -74,7 +81,7 @@ module.exports.transform = function(src, filename, options) {
   }
 
   if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
-    var config = resolveConfig.sync(resolveConfigDir(filename));
+    var config = resolveConfig.sync(resolveConfigDir(path.join(projectRoot, filename)));
     var svgrConfig = config
       ? Object.assign({}, defaultsvgrConfig, config)
       : defaultsvgrConfig;
