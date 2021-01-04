@@ -42,9 +42,36 @@ yarn add --dev react-native-svg-transformer
 
 ### Step 3: Configure the react native packager
 
-#### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
+#### For Expo SDK v40.0.0 or newer
 
 Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+
+`metro.config.js`:
+
+```js
+const { getDefaultConfig } = require("@expo/metro-config");
+
+module.exports = (async () => {
+  const {
+    resolver: { sourceExts, assetExts }
+  } = await getDefaultConfig(__dirname);
+  return {
+    transformer: {
+      babelTransformerPath: require.resolve("react-native-svg-transformer")
+    },
+    resolver: {
+      assetExts: assetExts.filter(ext => ext !== "svg"),
+      sourceExts: [...sourceExts, "svg"]
+    }
+  };
+})();
+```
+
+---
+
+#### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
+
+If you are using [Expo](https://expo.io/), merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
 `metro.config.js`:
 
@@ -65,6 +92,30 @@ module.exports = (async () => {
     }
   };
 })();
+
+also need to add this to `app.json`:
+
+```json
+{
+  "expo": {
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "expo.ts",
+        "expo.tsx",
+        "expo.js",
+        "expo.jsx",
+        "ts",
+        "tsx",
+        "js",
+        "jsx",
+        "json",
+        "wasm",
+        "svg"
+      ]
+    }
+  }
+}
 ```
 
 If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
@@ -111,22 +162,6 @@ module.exports = {
 };
 ```
 
----
-
-#### For Expo SDK v30.0.0 or older
-
-If you are using [Expo](https://expo.io/), instead of adding the `rn-cli.config.js` file, you need to add this to `app.json`:
-
-```json
-{
-  "expo": {
-    "packagerOpts": {
-      "sourceExts": ["js", "jsx", "svgx"],
-      "transformer": "node_modules/react-native-svg-transformer/index.js"
-    }
-  }
-}
-```
 
 ### Using TypeScript
 
