@@ -93,31 +93,6 @@ module.exports = (async () => {
   };
 })();
 
-also need to add this to `app.json`:
-
-```json
-{
-  "expo": {
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": [
-        "expo.ts",
-        "expo.tsx",
-        "expo.js",
-        "expo.jsx",
-        "ts",
-        "tsx",
-        "js",
-        "jsx",
-        "json",
-        "wasm",
-        "svg"
-      ]
-    }
-  }
-}
-```
-
 If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
 
 ```json
