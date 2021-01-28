@@ -92,6 +92,7 @@ module.exports = (async () => {
     }
   };
 })();
+```
 
 If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
 
