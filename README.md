@@ -6,6 +6,11 @@ React Native SVG transformer allows you to import SVG files in your React Native
 
 This makes it possible to use the same code for React Native and Web.
 
+## Fork
+
+- updated version of svgr
+- delete plugin svgo as we do this via lint-staged
+
 ## Usage
 
 Import your `.svg` file inside a React component:
@@ -52,7 +57,7 @@ Merge the contents from your project's `metro.config.js` file with this config (
 // expo v40:
 const { getDefaultConfig } = require("@expo/metro-config");
 
-// expo v41: 
+// expo v41:
 // remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 const { getDefaultConfig } = require("expo/metro-config");
 
@@ -237,7 +242,7 @@ module.exports = {
 
 ### Rendering custom fonts in iOS
 
-At the moment [react-native-svg](https://github.com/magicismight/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file. 
+At the moment [react-native-svg](https://github.com/magicismight/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
 
 
 ### Dependencies
@@ -246,6 +251,5 @@ In addition to React Native, this transfomer depends on the following libraries:
 
 - [react-native-svg](https://github.com/magicismight/react-native-svg#readme)
 - [@svgr/core](https://github.com/smooth-code/svgr/tree/master/packages/core)
-- [@svgr/plugin-svgo](https://github.com/smooth-code/svgr/tree/master/packages/plugin-svgo)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
 - [semver](https://github.com/npm/node-semver#readme)

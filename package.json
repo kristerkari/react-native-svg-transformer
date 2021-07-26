@@ -1,9 +1,9 @@
 {
-  "name": "react-native-svg-transformer",
-  "version": "0.14.3",
-  "description": "SVG transformer for react-native",
+  "name": "@ornikar/react-native-svg-transformer",
+  "version": "0.14.4",
+  "description": "SVG transformer for react-native - fork of kristerkari",
   "main": "index.js",
-  "repository": "https://github.com/kristerkari/react-native-svg-transformer",
+  "repository": "https://github.com/ornikar/react-native-svg-transformer",
   "scripts": {
     "release": "npmpub",
     "precommit": "lint-staged",
@@ -17,10 +17,9 @@
     "README.md"
   ],
   "dependencies": {
-    "@svgr/core": "^4.3.3",
-    "@svgr/plugin-svgo": "^4.3.1",
+    "@svgr/core": "^5.5.0",
     "path-dirname": "^1.0.2",
-    "semver": "^5.6.0"
+    "semver": "^7.3.5"
   },
   "peerDependencies": {
     "react-native": ">=0.45.0",

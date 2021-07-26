@@ -6,7 +6,7 @@ var resolveConfigDir = require("path-dirname");
 var upstreamTransformer = null;
 
 var reactNativeVersionString = require("react-native/package.json").version;
-var reactNativeMinorVersion = semver(reactNativeVersionString).minor;
+var reactNativeMinorVersion = semver.minor(reactNativeVersionString);
 
 if (reactNativeMinorVersion >= 59) {
   upstreamTransformer = require("metro-react-native-babel-transformer");
@@ -46,25 +46,7 @@ function fixRenderingBugs(svgrOutput) {
 
 var defaultsvgrConfig = {
   native: true,
-  plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
-  svgoConfig: {
-    plugins: [
-      {
-        inlineStyles: {
-          onlyMatchedOnce: false
-        }
-      },
-      {
-        removeViewBox: false
-      },
-      {
-        removeUnknownsAndDefaults: false
-      },
-      {
-        convertColors: false
-      }
-    ]
-  }
+  plugins: ["@svgr/plugin-jsx"]
 };
 
 module.exports.transform = function(src, filename, options) {
