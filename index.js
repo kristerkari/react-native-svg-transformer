@@ -3,25 +3,25 @@ var svgr = require("@svgr/core").default;
 var resolveConfig = require("@svgr/core").resolveConfig;
 var resolveConfigDir = require("path-dirname");
 
-var upstreamTransformer = null;
+var defaultUpstreamTransformer = null;
 
 var reactNativeVersionString = require("react-native/package.json").version;
 var reactNativeMinorVersion = semver(reactNativeVersionString).minor;
 
 if (reactNativeMinorVersion >= 59) {
-  upstreamTransformer = require("metro-react-native-babel-transformer");
+  defaultUpstreamTransformer = require("metro-react-native-babel-transformer");
 } else if (reactNativeMinorVersion >= 56) {
-  upstreamTransformer = require("metro/src/reactNativeTransformer");
+  defaultUpstreamTransformer = require("metro/src/reactNativeTransformer");
 } else if (reactNativeMinorVersion >= 52) {
-  upstreamTransformer = require("metro/src/transformer");
+  defaultUpstreamTransformer = require("metro/src/transformer");
 } else if (reactNativeMinorVersion >= 47) {
-  upstreamTransformer = require("metro-bundler/src/transformer");
+  defaultUpstreamTransformer = require("metro-bundler/src/transformer");
 } else if (reactNativeMinorVersion === 46) {
-  upstreamTransformer = require("metro-bundler/build/transformer");
+  defaultUpstreamTransformer = require("metro-bundler/build/transformer");
 } else {
   // handle RN <= 0.45
   var oldUpstreamTransformer = require("react-native/packager/transformer");
-  upstreamTransformer = {
+  defaultUpstreamTransformer = {
     transform({ src, filename, options }) {
       return oldUpstreamTransformer.transform(src, filename, options);
     }
@@ -67,23 +67,27 @@ var defaultsvgrConfig = {
   }
 };
 
-module.exports.transform = function(src, filename, options) {
-  if (typeof src === "object") {
-    // handle RN >= 0.46
-    ({ src, filename, options } = src);
-  }
+module.exports.makeTransformer = function (upstreamTransformer) { 
+  return function(src, filename, options) {
+    if (typeof src === "object") {
+      // handle RN >= 0.46
+      ({ src, filename, options } = src);
+    }
 
-  if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
-    var config = resolveConfig.sync(resolveConfigDir(filename));
-    var svgrConfig = config
-      ? Object.assign({}, defaultsvgrConfig, config)
-      : defaultsvgrConfig;
-    var jsCode = svgr.sync(src, svgrConfig);
-    return upstreamTransformer.transform({
-      src: fixRenderingBugs(jsCode),
-      filename,
-      options
-    });
+    if (filename.endsWith(".svg") || filename.endsWith(".svgx")) {
+      var config = resolveConfig.sync(resolveConfigDir(filename));
+      var svgrConfig = config
+        ? Object.assign({}, defaultsvgrConfig, config)
+        : defaultsvgrConfig;
+      var jsCode = svgr.sync(src, svgrConfig);
+      return upstreamTransformer.transform({
+        src: fixRenderingBugs(jsCode),
+        filename,
+        options
+      });
+    }
+    return upstreamTransformer.transform({ src, filename, options });
   }
-  return upstreamTransformer.transform({ src, filename, options });
 };
+
+module.exports.transform = makeTransformer(defaultUpstreamTransformer);
