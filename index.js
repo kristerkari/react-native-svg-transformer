@@ -1,5 +1,5 @@
 var semver = require("semver");
-var svgr = require("@svgr/core").default;
+var svgrTransform = require("@svgr/core").transform;
 var resolveConfig = require("@svgr/core").resolveConfig;
 var resolveConfigDir = require("path-dirname");
 
@@ -48,22 +48,19 @@ var defaultsvgrConfig = {
   native: true,
   plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
   svgoConfig: {
-    plugins: [
-      {
-        inlineStyles: {
-          onlyMatchedOnce: false
+    plugins: [{
+      name: "preset-default",
+      params: {
+        overrides: {
+          inlineStyles: {
+            onlyMatchedOnce: false
+          },
+          removeViewBox: false,
+          removeUnknownsAndDefaults: false,
+          convertColors: false
         }
-      },
-      {
-        removeViewBox: false
-      },
-      {
-        removeUnknownsAndDefaults: false
-      },
-      {
-        convertColors: false
       }
-    ]
+    }]
   }
 };
 
@@ -78,7 +75,7 @@ module.exports.transform = function(src, filename, options) {
     var svgrConfig = config
       ? Object.assign({}, defaultsvgrConfig, config)
       : defaultsvgrConfig;
-    var jsCode = svgr.sync(src, svgrConfig);
+    var jsCode = svgrTransform.sync(src, svgrConfig);
     return upstreamTransformer.transform({
       src: fixRenderingBugs(jsCode),
       filename,
