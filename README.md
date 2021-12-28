@@ -2,7 +2,7 @@
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-native-logo.png" width="160"></a><img src="images/plus.svg" width="100"><img src="images/svg-logo.svg" width="160">
 
-React Native SVG transformer allows you to import SVG files in your React Native project the same way that you would in a Web application when using a library like [SVGR](https://github.com/smooth-code/svgr/tree/master/packages/webpack#svgrwebpack) to transform your imported SVG images into React components.
+React Native SVG transformer allows you to import SVG files in your React Native project the same way that you would in a Web application when using a library like [SVGR](https://github.com/gregberge/svgr/tree/main/packages/webpack) to transform your imported SVG images into React components.
 
 This makes it possible to use the same code for React Native and Web.
 
@@ -52,7 +52,7 @@ Merge the contents from your project's `metro.config.js` file with this config (
 // expo v40:
 const { getDefaultConfig } = require("@expo/metro-config");
 
-// expo v41: 
+// expo v41:
 // remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 const { getDefaultConfig } = require("expo/metro-config");
 
@@ -159,9 +159,9 @@ declare module "*.svg" {
 
 ### Configuring SVGR (how SVG images get transformed)
 
-[SVGR](https://github.com/smooth-code/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
+[SVGR](https://github.com/gregberge/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
 
-Read more about the configuration options: [Configuring SVGR](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/configuration-files.mdx) and [SVGR options](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/options.mdx).
+Read more about the configuration options: [Configuring SVGR](https://react-svgr.com/docs/configuration-files/) and [SVGR options](https://react-svgr.com/docs/options/).
 
 For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this will be used for all SVG images in your app).
 
@@ -177,7 +177,7 @@ For example, if you want to change SVG image's fill color from `red` to `current
 
 #### Changing SVG fill color in JS Code
 
-Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.fill}**
+Edit your `.svgrrc` file and include a line for `replaceAttrValues` that matching a hex code to `{props.fill}`
 
 ```json
 {
@@ -237,15 +237,15 @@ module.exports = {
 
 ### Rendering custom fonts in iOS
 
-At the moment [react-native-svg](https://github.com/magicismight/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file. 
+At the moment [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
 
 
 ### Dependencies
 
-In addition to React Native, this transfomer depends on the following libraries:
+In addition to React Native, this transformer depends on the following libraries:
 
-- [react-native-svg](https://github.com/magicismight/react-native-svg#readme)
-- [@svgr/core](https://github.com/smooth-code/svgr/tree/master/packages/core)
-- [@svgr/plugin-svgo](https://github.com/smooth-code/svgr/tree/master/packages/plugin-svgo)
+- [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme)
+- [@svgr/core](https://github.com/gregberge/svgr/tree/main/packages/core#readme)
+- [@svgr/plugin-svgo](https://github.com/gregberge/svgr/tree/main/packages/plugin-svgo#readme)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
 - [semver](https://github.com/npm/node-semver#readme)
