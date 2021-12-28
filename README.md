@@ -22,9 +22,10 @@ You can then use your image as a component:
 
 _If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
 
-### Demo (iOS/Android/Web)
+### Demo / Expo demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example) (no Web support for Expo, help needed)
 
 ## Installation and configuration
 
