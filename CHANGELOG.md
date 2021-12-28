@@ -1,3 +1,8 @@
+## v0.20.0
+
+- Updated: `@svgr/core` dependency to v6.1.2.
+- Updated: `@svgr/plugin-svgo` dependency to v6.1.2.
+
 ## v0.14.3
 
 - Fixed: SVGO was changing colors to shorthand format, which caused SVGR attribute replacement with colors not to work correctly.
