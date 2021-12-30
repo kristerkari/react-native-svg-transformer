@@ -20,8 +20,6 @@ You can then use your image as a component:
 <Logo width={120} height={40} />
 ```
 
-_If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
-
 ### Demo / Expo demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
@@ -31,7 +29,7 @@ _If you use React Native version 0.56 or older, you need to rename your `.svg` f
 
 ### Step 1: Install react-native-svg library
 
-Make sure that you have installed and linked `react-native-svg` library:
+Make sure that you have installed the `react-native-svg` library:
 
 - https://github.com/react-native-community/react-native-svg#installation
 
@@ -43,18 +41,13 @@ yarn add --dev react-native-svg-transformer
 
 ### Step 3: Configure the react native packager
 
-#### For Expo SDK v40.0.0 or newer
+#### For Expo SDK v41.0.0 or newer
 
 Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
 `metro.config.js`:
 
 ```js
-// expo v40:
-const { getDefaultConfig } = require("@expo/metro-config");
-
-// expo v41:
-// remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 const { getDefaultConfig } = require("expo/metro-config");
 
 module.exports = (() => {
@@ -78,9 +71,9 @@ module.exports = (() => {
 
 ---
 
-#### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
+#### For React Native v0.59 or newer
 
-If you are using [Expo](https://expo.io/), merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
 `metro.config.js`:
 
@@ -102,51 +95,6 @@ module.exports = (async () => {
   };
 })();
 ```
-
-If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
-
-```json
-{
-  "expo": {
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": [
-        "expo.ts",
-        "expo.tsx",
-        "expo.js",
-        "expo.jsx",
-        "ts",
-        "tsx",
-        "js",
-        "jsx",
-        "json",
-        "wasm",
-        "svg"
-      ]
-    }
-  }
-}
-```
-
----
-
-#### For React Native v0.56 or older
-
-React Native versions older than 0.57 do not support running the transformer for `.svg` file extension. That is why a `.svgx` file extension should be used instead for your SVG files. This is fixed in React Native 0.57 and newer versions.
-
-Add this to your `rn-cli.config.js` (create the file if it does not exist already):
-
-```js
-module.exports = {
-  getTransformModulePath() {
-    return require.resolve("react-native-svg-transformer");
-  },
-  getSourceExts() {
-    return ["js", "jsx", "svgx"];
-  }
-};
-```
-
 
 ### Using TypeScript
 
@@ -252,4 +200,3 @@ In addition to React Native, this transformer depends on the following libraries
 - [@svgr/core](https://github.com/gregberge/svgr/tree/main/packages/core#readme)
 - [@svgr/plugin-svgo](https://github.com/gregberge/svgr/tree/main/packages/plugin-svgo#readme)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
-- [semver](https://github.com/npm/node-semver#readme)

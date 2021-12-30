@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-transformer",
-  "version": "0.20.0",
+  "version": "1.0.0",
   "description": "SVG transformer for react-native",
   "main": "index.js",
   "repository": "https://github.com/kristerkari/react-native-svg-transformer",
@@ -19,12 +19,11 @@
   "dependencies": {
     "@svgr/core": "^6.1.2",
     "@svgr/plugin-svgo": "^6.1.2",
-    "path-dirname": "^1.0.2",
-    "semver": "^5.6.0"
+    "path-dirname": "^1.0.2"
   },
   "peerDependencies": {
-    "react-native": ">=0.45.0",
-    "react-native-svg": ">=6.5.1"
+    "react-native": ">=0.59.0",
+    "react-native-svg": ">=12.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",

@@ -1,3 +1,9 @@
+## v1.0.0
+
+- Breaking: drop support for `react-native` versions older than 0.59
+- Breaking: drop support for `react-native-svg` versions older than 12
+- Removed: `semver` dependency.
+
 ## v0.20.0
 
 - Updated: `@svgr/core` dependency to v6.1.2.
