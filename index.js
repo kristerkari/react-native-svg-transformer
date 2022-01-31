@@ -13,6 +13,9 @@ module.exports.transform = async ({ src, filename, options }) => {
     const svgrConfig = config
       ? { ...defaultSVGRConfig, ...config }
       : defaultSVGRConfig;
+    if (!filename.endsWith(".inline.svg")) {
+      svgrConfig.exportType = "named";
+    }
     return upstreamTransformer.transform({
       src: await transform(src, svgrConfig),
       filename,
