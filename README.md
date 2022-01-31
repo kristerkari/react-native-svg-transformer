@@ -2,7 +2,7 @@
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-native-logo.png" width="160"></a><img src="images/plus.svg" width="100"><img src="images/svg-logo.svg" width="160">
 
-React Native SVG transformer allows you to import SVG files in your React Native project the same way that you would in a Web application when using a library like [SVGR](https://github.com/smooth-code/svgr/tree/master/packages/webpack#svgrwebpack) to transform your imported SVG images into React components.
+React Native SVG transformer allows you to import SVG files in your React Native project the same way that you would in a Web application when using a library like [SVGR](https://github.com/gregberge/svgr/tree/main/packages/webpack) to transform your imported SVG images into React components.
 
 This makes it possible to use the same code for React Native and Web.
 
@@ -25,17 +25,16 @@ You can then use your image as a component:
 <Logo width={120} height={40} />
 ```
 
-_If you use React Native version 0.56 or older, you need to rename your `.svg` files to `.svgx`._
-
-### Demo (iOS/Android/Web)
+### Demo / Expo demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
+- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example) (no Web support for Expo, help needed)
 
 ## Installation and configuration
 
 ### Step 1: Install react-native-svg library
 
-Make sure that you have installed and linked `react-native-svg` library:
+Make sure that you have installed the `react-native-svg` library:
 
 - https://github.com/react-native-community/react-native-svg#installation
 
@@ -47,41 +46,39 @@ yarn add --dev react-native-svg-transformer
 
 ### Step 3: Configure the react native packager
 
-#### For Expo SDK v40.0.0 or newer
+#### For Expo SDK v41.0.0 or newer
 
 Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
 `metro.config.js`:
 
 ```js
-// expo v40:
-const { getDefaultConfig } = require("@expo/metro-config");
-
-// expo v41:
-// remove the @ (see: https://blog.expo.io/expo-sdk-41-12cc5232f2ef)
 const { getDefaultConfig } = require("expo/metro-config");
 
-module.exports = (async () => {
-  const {
-    resolver: { sourceExts, assetExts }
-  } = await getDefaultConfig(__dirname);
-  return {
-    transformer: {
-      babelTransformerPath: require.resolve("react-native-svg-transformer")
-    },
-    resolver: {
-      assetExts: assetExts.filter(ext => ext !== "svg"),
-      sourceExts: [...sourceExts, "svg"]
-    }
+module.exports = (() => {
+  const config = getDefaultConfig(__dirname);
+
+  const { transformer, resolver } = config;
+
+  config.transformer = {
+    ...transformer,
+    babelTransformerPath: require.resolve("react-native-svg-transformer"),
   };
+  config.resolver = {
+    ...resolver,
+    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...resolver.sourceExts, "svg"],
+  };
+
+  return config;
 })();
 ```
 
 ---
 
-#### For React Native v0.57 or newer / Expo SDK v31.0.0 or newer
+#### For React Native v0.59 or newer
 
-If you are using [Expo](https://expo.io/), merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
 `metro.config.js`:
 
@@ -104,51 +101,6 @@ module.exports = (async () => {
 })();
 ```
 
-If you are using [Expo](https://expo.io/), you also need to add this to `app.json`:
-
-```json
-{
-  "expo": {
-    "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": [
-        "expo.ts",
-        "expo.tsx",
-        "expo.js",
-        "expo.jsx",
-        "ts",
-        "tsx",
-        "js",
-        "jsx",
-        "json",
-        "wasm",
-        "svg"
-      ]
-    }
-  }
-}
-```
-
----
-
-#### For React Native v0.56 or older
-
-React Native versions older than 0.57 do not support running the transformer for `.svg` file extension. That is why a `.svgx` file extension should be used instead for your SVG files. This is fixed in React Native 0.57 and newer versions.
-
-Add this to your `rn-cli.config.js` (create the file if it does not exist already):
-
-```js
-module.exports = {
-  getTransformModulePath() {
-    return require.resolve("react-native-svg-transformer");
-  },
-  getSourceExts() {
-    return ["js", "jsx", "svgx"];
-  }
-};
-```
-
-
 ### Using TypeScript
 
 If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already, but don't put in the root folder of your project):
@@ -164,9 +116,9 @@ declare module "*.svg" {
 
 ### Configuring SVGR (how SVG images get transformed)
 
-[SVGR](https://github.com/smooth-code/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
+[SVGR](https://github.com/gregberge/svgr) has a configuration file, which makes it possible for you to customize how SVG images get transformed to React/React Native.
 
-Read more about the configuration options: [Configuring SVGR](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/configuration-files.mdx) and [SVGR options](https://github.com/smooth-code/svgr/blob/master/website/src/pages/docs/options.mdx).
+Read more about the configuration options: [Configuring SVGR](https://react-svgr.com/docs/configuration-files/) and [SVGR options](https://react-svgr.com/docs/options/).
 
 For example, if you want to change SVG image's fill color from `red` to `currentColor` (keep in mind that this will be used for all SVG images in your app).
 
@@ -182,7 +134,7 @@ For example, if you want to change SVG image's fill color from `red` to `current
 
 #### Changing SVG fill color in JS Code
 
-Edit your `.svgrrc` file and include a line for **replaceAttrValues** that matching a hex code to **{props.fill}**
+Edit your `.svgrrc` file and include a line for `replaceAttrValues` that matching a hex code to `{props.fill}`
 
 ```json
 {
@@ -242,14 +194,13 @@ module.exports = {
 
 ### Rendering custom fonts in iOS
 
-At the moment [react-native-svg](https://github.com/magicismight/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
+At the moment [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
 
 
 ### Dependencies
 
-In addition to React Native, this transfomer depends on the following libraries:
+In addition to React Native, this transformer depends on the following libraries:
 
-- [react-native-svg](https://github.com/magicismight/react-native-svg#readme)
-- [@svgr/core](https://github.com/smooth-code/svgr/tree/master/packages/core)
+- [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme)
+- [@svgr/core](https://github.com/gregberge/svgr/tree/main/packages/core#readme)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
-- [semver](https://github.com/npm/node-semver#readme)

@@ -1,3 +1,14 @@
+## v1.0.0
+
+- Breaking: drop support for `react-native` versions older than 0.59
+- Breaking: drop support for `react-native-svg` versions older than 12
+- Removed: `semver` dependency.
+
+## v0.20.0
+
+- Updated: `@svgr/core` dependency to v6.1.2.
+- Updated: `@svgr/plugin-svgo` dependency to v6.1.2.
+
 ## v0.14.3
 
 - Fixed: SVGO was changing colors to shorthand format, which caused SVGR attribute replacement with colors not to work correctly.
