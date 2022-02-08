@@ -1,5 +1,6 @@
-const { resolveConfig, transform } = require("@svgr/core");
-const resolveConfigDir = require("path-dirname");
+const { transform } = require("@svgr/core");
+// const { resolveConfig, transform } = require("@svgr/core");
+// const resolveConfigDir = require("path-dirname");
 const upstreamTransformer = require("metro-react-native-babel-transformer");
 
 const defaultSVGRConfig = {
@@ -9,10 +10,11 @@ const defaultSVGRConfig = {
 
 module.exports.transform = async ({ src, filename, options }) => {
   if (filename.endsWith(".svg")) {
-    const config = await resolveConfig(resolveConfigDir(filename));
-    let svgrConfig = config
-      ? { ...defaultSVGRConfig, ...config }
-      : defaultSVGRConfig;
+    // const config = await resolveConfig(resolveConfigDir(filename));
+    // let svgrConfig = config
+    //  ? { ...defaultSVGRConfig, ...config }
+    //  : defaultSVGRConfig;
+    let config = defaultSVGRConfig;
     if (!filename.endsWith(".inline.svg")) {
       svgrConfig = { ...svgrConfig, exportType: "named" };
     }
