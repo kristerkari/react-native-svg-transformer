@@ -10,7 +10,7 @@ const defaultSVGRConfig = {
 module.exports.transform = async ({ src, filename, options }) => {
   if (filename.endsWith(".svg")) {
     const config = await resolveConfig(resolveConfigDir(filename));
-    const svgrConfig = config
+    let svgrConfig = config
       ? { ...defaultSVGRConfig, ...config }
       : defaultSVGRConfig;
     if (!filename.endsWith(".inline.svg")) {
