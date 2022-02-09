@@ -14,7 +14,7 @@ module.exports.transform = async ({ src, filename, options }) => {
     // let svgrConfig = config
     //  ? { ...defaultSVGRConfig, ...config }
     //  : defaultSVGRConfig;
-    let config = defaultSVGRConfig;
+    let svgrConfig = defaultSVGRConfig;
     if (!filename.endsWith(".inline.svg")) {
       svgrConfig = { ...svgrConfig, exportType: "named" };
     }
