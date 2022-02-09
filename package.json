@@ -1,6 +1,6 @@
 {
   "name": "@ornikar/react-native-svg-transformer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SVG transformer for react-native - fork of kristerkari",
   "main": "index.js",
   "repository": "https://github.com/ornikar/react-native-svg-transformer",
