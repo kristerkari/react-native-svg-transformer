@@ -33,7 +33,7 @@
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "^13.0.3",
     "npmpub": "^5.0.0",
     "prettier": "^2.4.1"
   },
