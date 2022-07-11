@@ -30,7 +30,7 @@
     "eslint-config-standard": "^15.0.1",
     "eslint-plugin-import": "^2.17.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
