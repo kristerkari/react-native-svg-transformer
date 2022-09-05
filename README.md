@@ -98,7 +98,7 @@ module.exports = (async () => {
 
 ### Using TypeScript
 
-If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already, but don't put in the root folder of your project):
+If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
 
 ```ts
 declare module "*.svg" {
