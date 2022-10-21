@@ -514,9 +514,9 @@
     svg-parser "^2.0.4"
 
 "@svgr/plugin-svgo@^6.1.2":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-6.3.1.tgz#3c1ff2efaed10e5c5d35a6cae7bacaedc18b5d4a"
-  integrity sha512-yJIjTDKPYqzFVjmsbH5EdIwEsmKxjxdXSGJVLeUgwZOZPAkNQmD1v7LDbOdOKbR44FG8465Du+zWPdbYGnbMbw==
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@svgr/plugin-svgo/-/plugin-svgo-6.5.0.tgz#1d9b7d0909bde9fe7d724569c7f7833f3a7bacd7"
+  integrity sha512-8Zv1Yyv6I7HlIqrqGFM0sDKQrhjbfNZJawR8UjIaVWSb0tKZP1Ra6ymhqIFu6FT6kDRD0Ct5NlQZ10VUujSspw==
   dependencies:
     cosmiconfig "^7.0.1"
     deepmerge "^4.2.2"
