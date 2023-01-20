@@ -48,10 +48,6 @@
   "eslintConfig": {
     "extends": "standard",
     "rules": {
-      "space-before-function-paren": [
-        2,
-        "never"
-      ],
       "semi": [
         2,
         "always"
@@ -64,8 +60,6 @@
     }
   },
   "prettier": {
-    "semi": true,
-    "singleQuote": false,
     "trailingComma": "none"
   }
 }
