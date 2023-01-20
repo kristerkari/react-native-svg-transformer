@@ -5,9 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/kristerkari/react-native-svg-transformer",
   "scripts": {
-    "release": "npmpub",
+    "lint": "eslint .",
     "precommit": "lint-staged",
-    "test": "eslint ."
+    "release": "npmpub",
+    "test": "npm run lint"
   },
   "author": "Krister Kari",
   "license": "MIT",
