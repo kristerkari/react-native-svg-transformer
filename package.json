@@ -5,9 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/kristerkari/react-native-svg-transformer",
   "scripts": {
-    "release": "npmpub",
+    "lint": "eslint .",
     "precommit": "lint-staged",
-    "test": "eslint ."
+    "release": "npmpub",
+    "test": "npm run lint"
   },
   "author": "Krister Kari",
   "license": "MIT",
@@ -27,8 +28,9 @@
   },
   "devDependencies": {
     "eslint": "^8.19.0",
-    "eslint-config-standard": "^15.0.1",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.17.0",
+    "eslint-plugin-n": "15.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
@@ -46,10 +48,6 @@
   "eslintConfig": {
     "extends": "standard",
     "rules": {
-      "space-before-function-paren": [
-        2,
-        "never"
-      ],
       "semi": [
         2,
         "always"
@@ -62,8 +60,6 @@
     }
   },
   "prettier": {
-    "semi": true,
-    "singleQuote": false,
     "trailingComma": "none"
   }
 }
