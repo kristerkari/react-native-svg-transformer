@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "@svgr/core": "^6.1.2",
-    "@svgr/plugin-svgo": "^6.1.2",
+    "@svgr/plugin-svgo": "^7.0.0",
     "path-dirname": "^1.0.2"
   },
   "peerDependencies": {
