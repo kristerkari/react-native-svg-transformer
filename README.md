@@ -96,7 +96,7 @@ module.exports = (async () => {
 })();
 ```
 
-#### For React Native v0.72 or newer
+#### For React Native v0.72.1 or newer
 
 Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
 
@@ -104,30 +104,27 @@ Merge the contents from your project's `metro.config.js` file with this config (
 
 ```js
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
-const defaultSourceExts = require('metro-config/src/defaults/defaults').sourceExts;
-const defaultAssetExts = require('metro-config/src/defaults/defaults').assetExts;
+
+const defaultConfig = getDefaultConfig(__dirname);
+const {assetExts, sourceExts} = defaultConfig.resolver;
+
 /**
  * Metro configuration
  * https://facebook.github.io/metro/docs/configuration
  *
  * @type {import('metro-config').MetroConfig}
  */
+const config = {
+  transformer: {
+    babelTransformerPath: require.resolve('react-native-svg-transformer'),
+  },
+  resolver: {
+    assetExts: assetExts.filter(ext => ext !== 'svg'),
+    sourceExts: [...sourceExts, 'svg'],
+  },
+};
 
-module.exports = mergeConfig(getDefaultConfig(__dirname), {
-    transformer: {
-        babelTransformerPath: require.resolve('react-native-svg-transformer'),
-        getTransformOptions: async () => ({
-            transform: {
-                experimentalImportSupport: false,
-                inlineRequires: true,
-            },
-        }),
-    },
-    resolver: {
-        assetExts: defaultAssetExts.filter(ext => ext !== 'svg'),
-        sourceExts: [...defaultSourceExts, 'svg'],
-    },
-});
+module.exports = mergeConfig(defaultConfig, config);
 ```
 
 ### Using TypeScript
