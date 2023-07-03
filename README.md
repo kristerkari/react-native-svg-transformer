@@ -96,6 +96,37 @@ module.exports = (async () => {
 })();
 ```
 
+#### For React Native v0.72.1 or newer
+
+Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+
+`metro.config.js`:
+
+```js
+const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+const {assetExts, sourceExts} = defaultConfig.resolver;
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
+  transformer: {
+    babelTransformerPath: require.resolve('react-native-svg-transformer'),
+  },
+  resolver: {
+    assetExts: assetExts.filter(ext => ext !== 'svg'),
+    sourceExts: [...sourceExts, 'svg'],
+  },
+};
+
+module.exports = mergeConfig(defaultConfig, config);
+```
+
 ### Using TypeScript
 
 If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
