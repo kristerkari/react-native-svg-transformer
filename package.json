@@ -17,7 +17,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@svgr/core": "^6.1.2",
+    "@svgr/core": "^8.0.0",
     "@svgr/plugin-svgo": "^6.1.2",
     "path-dirname": "^1.0.2"
   },
