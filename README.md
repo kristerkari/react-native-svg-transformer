@@ -230,5 +230,6 @@ In addition to React Native, this transformer depends on the following libraries
 
 - [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme)
 - [@svgr/core](https://github.com/gregberge/svgr/tree/main/packages/core#readme)
+- [@svgr/plugin-jsx](https://github.com/gregberge/svgr/tree/main/packages/plugin-jsx#readme)
 - [@svgr/plugin-svgo](https://github.com/gregberge/svgr/tree/main/packages/plugin-svgo#readme)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
