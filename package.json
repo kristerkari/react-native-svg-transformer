@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/kristerkari/react-native-svg-transformer",
   "scripts": {
-    "release": "npmpub",
+    "release": "np",
     "precommit": "lint-staged",
     "test": "eslint ."
   },
@@ -35,7 +35,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
-    "npmpub": "^5.0.0",
+    "np": "^8.0.4",
     "prettier": "^3.0.0"
   },
   "lint-staged": {
