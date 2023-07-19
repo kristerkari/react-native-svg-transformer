@@ -57,12 +57,12 @@ module.exports = (() => {
 
   config.transformer = {
     ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer"),
+    babelTransformerPath: require.resolve("react-native-svg-transformer")
   };
   config.resolver = {
     ...resolver,
     assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
-    sourceExts: [...resolver.sourceExts, "svg"],
+    sourceExts: [...resolver.sourceExts, "svg"]
   };
 
   return config;
@@ -78,10 +78,10 @@ Merge the contents from your project's `metro.config.js` file with this config (
 `metro.config.js`:
 
 ```js
-const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
 
 const defaultConfig = getDefaultConfig(__dirname);
-const {assetExts, sourceExts} = defaultConfig.resolver;
+const { assetExts, sourceExts } = defaultConfig.resolver;
 
 /**
  * Metro configuration
@@ -91,12 +91,12 @@ const {assetExts, sourceExts} = defaultConfig.resolver;
  */
 const config = {
   transformer: {
-    babelTransformerPath: require.resolve('react-native-svg-transformer'),
+    babelTransformerPath: require.resolve("react-native-svg-transformer")
   },
   resolver: {
-    assetExts: assetExts.filter(ext => ext !== 'svg'),
-    sourceExts: [...sourceExts, 'svg'],
-  },
+    assetExts: assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...sourceExts, "svg"]
+  }
 };
 
 module.exports = mergeConfig(defaultConfig, config);
@@ -122,14 +122,12 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve("react-native-svg-transformer")
     },
     resolver: {
-      assetExts: assetExts.filter(ext => ext !== "svg"),
+      assetExts: assetExts.filter((ext) => ext !== "svg"),
       sourceExts: [...sourceExts, "svg"]
     }
   };
 })();
 ```
-
-
 
 ### Using TypeScript
 
@@ -137,7 +135,7 @@ If you are using TypeScript, you need to add this to your `declarations.d.ts` fi
 
 ```ts
 declare module "*.svg" {
-  import React from 'react';
+  import React from "react";
   import { SvgProps } from "react-native-svg";
   const content: React.FC<SvgProps>;
   export default content;
@@ -225,7 +223,6 @@ module.exports = {
 ### Rendering custom fonts in iOS
 
 At the moment [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
-
 
 ### Dependencies
 

@@ -6,23 +6,25 @@ const defaultSVGRConfig = {
   native: true,
   plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
   svgoConfig: {
-    plugins: [{
-      name: "preset-default",
-      params: {
-        overrides: {
-          inlineStyles: {
-            onlyMatchedOnce: false
-          },
-          removeViewBox: false,
-          removeUnknownsAndDefaults: false,
-          convertColors: false
+    plugins: [
+      {
+        name: "preset-default",
+        params: {
+          overrides: {
+            inlineStyles: {
+              onlyMatchedOnce: false
+            },
+            removeViewBox: false,
+            removeUnknownsAndDefaults: false,
+            convertColors: false
+          }
         }
       }
-    }]
+    ]
   }
 };
 
-module.exports.transform = async({ src, filename, options }) => {
+module.exports.transform = async ({ src, filename, options }) => {
   if (filename.endsWith(".svg")) {
     const config = await resolveConfig(resolveConfigDir(filename));
     const svgrConfig = config
