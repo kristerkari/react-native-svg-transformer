@@ -23,7 +23,7 @@ You can then use your image as a component:
 ### Demo / Expo demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
-- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example) (no Web support for Expo, help needed)
+- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example)
 
 ## Installation and configuration
 
