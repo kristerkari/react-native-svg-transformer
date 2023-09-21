@@ -193,7 +193,6 @@ To use `Jest` to test your React Native components that import `.svg` images, yo
 ```js
 // __mocks__/svgMock.js
 module.exports = "SvgMock";
-module.exports.ReactComponent = "SvgMock";
 ```
 
 Then, depending on where you have your Jest configuration:
