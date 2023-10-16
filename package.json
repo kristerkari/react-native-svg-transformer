@@ -34,7 +34,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^8.0.1",
-    "lint-staged": "^14.0.1",
+    "lint-staged": "^15.0.1",
     "np": "^8.0.4",
     "prettier": "^3.0.0"
   },
