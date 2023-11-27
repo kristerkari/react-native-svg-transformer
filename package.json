@@ -35,7 +35,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^15.0.2",
-    "np": "^8.0.4",
+    "np": "^9.0.0",
     "prettier": "^3.0.0"
   },
   "lint-staged": {
