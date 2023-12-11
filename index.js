@@ -1,6 +1,18 @@
 const { resolveConfig, transform } = require("@svgr/core");
 const resolveConfigDir = require("path-dirname");
-const upstreamTransformer = require("metro-react-native-babel-transformer");
+/**
+ * `metro-react-native-babel-transformer` has recently been migrated to the React Native
+ * repository and published under the `@react-native/metro-babel-transformer` name.
+ * The new package is default on `react-native` >= 0.73.0, so we need to conditionally load it.
+ */
+const upstreamTransformer = function() {
+  try {
+    const resolver = require("@react-native/metro-babel-transformer");
+    return resolver;
+  } catch (error) {
+    return require("metro-react-native-babel-transformer");
+  }
+}();
 
 const defaultSVGRConfig = {
   native: true,
