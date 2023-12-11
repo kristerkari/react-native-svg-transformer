@@ -1,3 +1,8 @@
+## v1.2.0
+
+- Added: support for `react-native` v0.73.0.
+- Updated: `@svgr/core`, `@svgr/plugin-svgo`, and `@svgr/plugin-jsx` to v8.1.0.
+
 ## v1.1.0
 
 - Updated: `@svgr/core` dependency to v8.0.0.
