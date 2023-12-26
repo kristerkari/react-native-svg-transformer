@@ -1,3 +1,7 @@
+## v1.3.0
+
+- Added: support for `Expo SDK` v50.
+
 ## v1.2.0
 
 - Added: support for `react-native` v0.73.0.
