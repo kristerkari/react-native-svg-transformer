@@ -28,7 +28,7 @@ You can then use your image as a component:
 ### Demo / Expo demo (iOS/Android/Web)
 
 - [react-native-svg-example](https://github.com/kristerkari/react-native-svg-example)
-- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example) (no Web support for Expo, help needed)
+- [react-native-svg-expo-example](https://github.com/kristerkari/react-native-svg-expo-example)
 
 ## Installation and configuration
 
@@ -62,16 +62,49 @@ module.exports = (() => {
 
   config.transformer = {
     ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer"),
+    babelTransformerPath: require.resolve("react-native-svg-transformer")
   };
   config.resolver = {
     ...resolver,
     assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
-    sourceExts: [...resolver.sourceExts, "svg"],
+    sourceExts: [...resolver.sourceExts, "svg"]
   };
 
   return config;
 })();
+```
+
+---
+
+#### For React Native v0.72.1 or newer
+
+Merge the contents from your project's `metro.config.js` file with this config (create the file if it does not exist already).
+
+`metro.config.js`:
+
+```js
+const { getDefaultConfig, mergeConfig } = require("@react-native/metro-config");
+
+const defaultConfig = getDefaultConfig(__dirname);
+const { assetExts, sourceExts } = defaultConfig.resolver;
+
+/**
+ * Metro configuration
+ * https://facebook.github.io/metro/docs/configuration
+ *
+ * @type {import('metro-config').MetroConfig}
+ */
+const config = {
+  transformer: {
+    babelTransformerPath: require.resolve("react-native-svg-transformer")
+  },
+  resolver: {
+    assetExts: assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...sourceExts, "svg"]
+  }
+};
+
+module.exports = mergeConfig(defaultConfig, config);
 ```
 
 ---
@@ -94,7 +127,7 @@ module.exports = (async () => {
       babelTransformerPath: require.resolve("react-native-svg-transformer")
     },
     resolver: {
-      assetExts: assetExts.filter(ext => ext !== "svg"),
+      assetExts: assetExts.filter((ext) => ext !== "svg"),
       sourceExts: [...sourceExts, "svg"]
     }
   };
@@ -103,11 +136,11 @@ module.exports = (async () => {
 
 ### Using TypeScript
 
-If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already, but don't put in the root folder of your project):
+If you are using TypeScript, you need to add this to your `declarations.d.ts` file (create one if you don't have one already):
 
 ```ts
 declare module "*.svg" {
-  import React from 'react';
+  import React from "react";
   import { SvgProps } from "react-native-svg";
   const content: React.FC<SvgProps>;
   export default content;
@@ -165,7 +198,6 @@ To use `Jest` to test your React Native components that import `.svg` images, yo
 ```js
 // __mocks__/svgMock.js
 module.exports = "SvgMock";
-module.exports.ReactComponent = "SvgMock";
 ```
 
 Then, depending on where you have your Jest configuration:
@@ -196,11 +228,11 @@ module.exports = {
 
 At the moment [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme) does not support custom font families in iOS right out of the box. A workaround is to take your `.svg` with custom fonts and [convert it to outlines](https://www.sketch.com/docs/text/#converting-text-to-vector-shapes). This will replace `text` tags for `path` tags in your `.svg` file.
 
-
 ### Dependencies
 
 In addition to React Native, this transformer depends on the following libraries:
 
 - [react-native-svg](https://github.com/react-native-svg/react-native-svg#readme)
 - [@svgr/core](https://github.com/gregberge/svgr/tree/main/packages/core#readme)
+- [@svgr/plugin-jsx](https://github.com/gregberge/svgr/tree/main/packages/plugin-jsx#readme)
 - [path-dirname](https://github.com/gulpjs/path-dirname#readme)
