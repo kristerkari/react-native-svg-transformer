@@ -43,7 +43,7 @@ const defaultSVGRConfig = {
   }
 };
 
-module.exports.transform = async ({ src, filename, options }) => {
+module.exports.transform = async ({ src, filename, ...rest }) => {
   if (filename.endsWith(".svg")) {
     const config = await resolveConfig(resolveConfigDir(filename));
     const svgrConfig = config
@@ -52,8 +52,8 @@ module.exports.transform = async ({ src, filename, options }) => {
     return upstreamTransformer.transform({
       src: await transform(src, svgrConfig),
       filename,
-      options
+      ...rest
     });
   }
-  return upstreamTransformer.transform({ src, filename, options });
+  return upstreamTransformer.transform({ src, filename, ...rest });
 };
