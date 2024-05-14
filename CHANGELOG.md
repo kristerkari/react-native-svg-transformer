@@ -1,3 +1,7 @@
+## 1.4.0
+
+- Added: forward all parameters of transform to the upstream transformer (#354).
+
 ## v1.3.0
 
 - Added: support for `Expo SDK` v50.
