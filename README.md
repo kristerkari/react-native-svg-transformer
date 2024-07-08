@@ -63,7 +63,7 @@ module.exports = (() => {
 
   config.transformer = {
     ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer")
+    babelTransformerPath: require.resolve("react-native-svg-transformer/expo")
   };
   config.resolver = {
     ...resolver,
@@ -97,7 +97,9 @@ const { assetExts, sourceExts } = defaultConfig.resolver;
  */
 const config = {
   transformer: {
-    babelTransformerPath: require.resolve("react-native-svg-transformer")
+    babelTransformerPath: require.resolve(
+      "react-native-svg-transformer/react-native"
+    )
   },
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== "svg"),
@@ -125,7 +127,9 @@ module.exports = (async () => {
   } = await getDefaultConfig();
   return {
     transformer: {
-      babelTransformerPath: require.resolve("react-native-svg-transformer")
+      babelTransformerPath: require.resolve(
+        "react-native-svg-transformer/react-native"
+      )
     },
     resolver: {
       assetExts: assetExts.filter((ext) => ext !== "svg"),
@@ -135,11 +139,11 @@ module.exports = (async () => {
 })();
 ```
 
-### Select which transformer to use (optional)
+#### React Native projects using Expo modules
 
 Some React Native projects are using [Expo modules](https://docs.expo.dev/bare/installing-expo-modules/) without using [expo-cli](https://docs.expo.dev/more/expo-cli/).
 
-In such projects Expo's transformer gets selected by default, and can be overwritten by adding `react-native` to the require path:
+In such projects Expo's transformer is selected by default, and can be overwritten to correctly use React Native's transformer by adding `react-native` to the require path:
 
 ```diff
 -require.resolve("react-native-svg-transformer")
