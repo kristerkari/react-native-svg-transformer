@@ -12,6 +12,8 @@
   "author": "Krister Kari",
   "license": "MIT",
   "files": [
+    "expo/index.js",
+    "react-native/index.js",
     "index.js",
     "CHANGELOG.md",
     "README.md"
@@ -55,7 +57,8 @@
         2,
         "double"
       ],
-      "no-else-return": 2
+      "no-else-return": 2,
+      "space-before-function-paren": 0
     }
   },
   "prettier": {

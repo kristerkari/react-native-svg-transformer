@@ -36,6 +36,12 @@ Make sure that you have installed the `react-native-svg` library:
 ### Step 2: Install react-native-svg-transformer library
 
 ```sh
+npm install --save-dev react-native-svg-transformer
+```
+
+or
+
+```sh
 yarn add --dev react-native-svg-transformer
 ```
 
@@ -57,7 +63,7 @@ module.exports = (() => {
 
   config.transformer = {
     ...transformer,
-    babelTransformerPath: require.resolve("react-native-svg-transformer")
+    babelTransformerPath: require.resolve("react-native-svg-transformer/expo")
   };
   config.resolver = {
     ...resolver,
@@ -91,7 +97,9 @@ const { assetExts, sourceExts } = defaultConfig.resolver;
  */
 const config = {
   transformer: {
-    babelTransformerPath: require.resolve("react-native-svg-transformer")
+    babelTransformerPath: require.resolve(
+      "react-native-svg-transformer/react-native"
+    )
   },
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== "svg"),
@@ -119,7 +127,9 @@ module.exports = (async () => {
   } = await getDefaultConfig();
   return {
     transformer: {
-      babelTransformerPath: require.resolve("react-native-svg-transformer")
+      babelTransformerPath: require.resolve(
+        "react-native-svg-transformer/react-native"
+      )
     },
     resolver: {
       assetExts: assetExts.filter((ext) => ext !== "svg"),
@@ -127,6 +137,24 @@ module.exports = (async () => {
     }
   };
 })();
+```
+
+#### React Native projects using Expo modules
+
+Some React Native projects are using [Expo modules](https://docs.expo.dev/bare/installing-expo-modules/) without using [expo-cli](https://docs.expo.dev/more/expo-cli/).
+
+In such projects Expo's transformer is selected by default, and can be overwritten to correctly use React Native's transformer by adding `react-native` to the require path:
+
+```diff
+-require.resolve("react-native-svg-transformer")
++require.resolve("react-native-svg-transformer/react-native")
+```
+
+You can also force Expo's transformer to always be used:
+
+```diff
+-require.resolve("react-native-svg-transformer")
++require.resolve("react-native-svg-transformer/expo")
 ```
 
 ### Using TypeScript
@@ -190,15 +218,17 @@ You can then use your image as a component:
 
 To use `Jest` to test your React Native components that import `.svg` images, you need to add this configuration that mocks the SVG images that are transformed to React components:
 
+`__mocks__/svgMock.js`:
+
 ```js
-// __mocks__/svgMock.js
 module.exports = "SvgMock";
 ```
 
 Then, depending on where you have your Jest configuration:
 
+`package.json`:
+
 ```json
-// package.json
 {
   "jest": {
     "moduleNameMapper": {
@@ -210,8 +240,9 @@ Then, depending on where you have your Jest configuration:
 
 or
 
+`jest.config.js`:
+
 ```js
-// jest.config.js
 module.exports = {
   moduleNameMapper: {
     "\\.svg": "<rootDir>/__mocks__/svgMock.js"
