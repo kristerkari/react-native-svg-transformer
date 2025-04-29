@@ -1,3 +1,3 @@
-const { createTransformer, expoTransformer } = require("../index.js");
+const { createTransformer, getExpoTransformer } = require("../index.js");
 
-module.exports.transform = createTransformer(expoTransformer);
+module.exports.transform = createTransformer(getExpoTransformer());
