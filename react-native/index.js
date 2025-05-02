@@ -1,3 +1,3 @@
-const { createTransformer, reactNativeTransformer } = require("../index.js");
+const { createTransformer, getReactNativeTransformer } = require("../index.js");
 
-module.exports.transform = createTransformer(reactNativeTransformer);
+module.exports.transform = createTransformer(getReactNativeTransformer());
