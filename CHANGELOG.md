@@ -1,3 +1,7 @@
+## 1.5.1
+
+- Fixed: do not try to resolve React Native's transformer in Expo projects. Fixes compatibility with Expo SDK 53 (#429).
+
 ## 1.5.0
 
 - Added: allow user to select between `expo` and `react-native` transformer by using `react-native-svg-transformer/react-native` or `react-native-svg-transformer/expo` as the transformer path (#366).
