@@ -18,7 +18,11 @@ const getExpoTransformer = () => {
   try {
     return require("@expo/metro-config/babel-transformer");
   } catch (error) {
-    return null;
+    try {
+      return require("expo/node_modules/@expo/metro-config/babel-transformer");
+    } catch (nestedError) {
+      return null;
+    }
   }
 };
 
