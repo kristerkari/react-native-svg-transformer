@@ -1,3 +1,7 @@
+## 1.5.2
+
+- Fixed: resolve module resolution failure introduced in Expo 54.0.8+ (#464).
+
 ## 1.5.1
 
 - Fixed: do not try to resolve React Native's transformer in Expo projects. Fixes compatibility with Expo SDK 53 (#429).
