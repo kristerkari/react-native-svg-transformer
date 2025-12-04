@@ -56,7 +56,7 @@ function createTransformer(transformer) {
         ? { ...defaultSVGRConfig, ...config }
         : defaultSVGRConfig;
       return transformer.transform({
-        src: await transform(src, svgrConfig),
+        src: await transform(src, svgrConfig, { filePath: filename }),
         filename,
         ...rest
       });
