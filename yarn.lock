@@ -3604,9 +3604,9 @@ normalize-package-data@^6.0.0:
     validate-npm-package-license "^3.0.4"
 
 np@^10.0.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/np/-/np-10.2.0.tgz#45542802c78aae23c63a54e18883807ec53dc4b4"
-  integrity sha512-7Pwk8qcsks2c9ETS35aeJSON6uJAbOsx7TwTFzZNUGgH4djT+Yt/p9S7PZuqH5pkcpNUhasne3cDRBzaUtvetg==
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/np/-/np-10.3.0.tgz#8c93d00a9e355efe3361b538480730e035eb4361"
+  integrity sha512-ERkEM70wpiWxRNwlN3YkpqyE3QGrgKZEiyVvv+Z4Im2mRE9nqCjnS1YFAXVdhGqVP5wpqG8cVc/A2bOJhEYFYQ==
   dependencies:
     chalk "^5.4.1"
     chalk-template "^1.1.0"
@@ -3635,8 +3635,8 @@ np@^10.0.0:
     open "^10.0.4"
     p-memoize "^7.1.1"
     p-timeout "^6.1.4"
+    package-directory "^8.0.0"
     path-exists "^5.0.0"
-    pkg-dir "^8.0.0"
     read-package-up "^11.0.0"
     read-pkg "^9.0.1"
     rxjs "^7.8.1"
@@ -3902,6 +3902,13 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
+package-directory@^8.0.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/package-directory/-/package-directory-8.1.0.tgz#75737f33380df04490de8cacb47d682116661401"
+  integrity sha512-qHKRW0pw3lYdZMQVkjDBqh8HlamH/LCww2PH7OWEp4Qrt3SFeYMNpnJrQzlSnGrDD5zGR51XqBh7FnNCdVNEHA==
+  dependencies:
+    find-up-simple "^1.0.0"
+
 package-json@^10.0.0:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/package-json/-/package-json-10.0.1.tgz#e49ee07b8de63b638e7f1b5bb353733e428fe7d7"
@@ -4004,13 +4011,6 @@ pkg-dir@^4.2.0:
   integrity sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
   dependencies:
     find-up "^4.0.0"
-
-pkg-dir@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-8.0.0.tgz#8f3de8ba83d46b72a05c80bfd4e579f060fa91e2"
-  integrity sha512-4peoBq4Wks0riS0z8741NVv+/8IiTvqnZAr8QGgtdifrtpdXbNw/FxRS1l6NFqm4EMzuS0EDqNNx4XGaz8cuyQ==
-  dependencies:
-    find-up-simple "^1.0.0"
 
 possible-typed-array-names@^1.0.0:
   version "1.0.0"
