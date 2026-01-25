@@ -1,3 +1,7 @@
+## 1.5.3
+
+- Fixed: pass file path to SVGR (#470).
+
 ## 1.5.2
 
 - Fixed: resolve module resolution failure introduced in Expo 54.0.8+ (#464).
