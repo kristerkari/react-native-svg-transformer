@@ -42,10 +42,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "prettier": {
-    "semi": true,
-    "singleQuote": false,
-    "trailingComma": "none"
   }
 }

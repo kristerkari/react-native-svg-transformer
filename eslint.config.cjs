@@ -5,10 +5,14 @@ module.exports = [
       sourceType: "script"
     },
     rules: {
-      "eqeqeq": ["error", "always", { "null": "ignore" }],
-      "indent": ["error", 2],
-      "quotes": ["error", "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
-      "semi": ["error", "always"],
+      eqeqeq: ["error", "always", { null: "ignore" }],
+      indent: ["error", 2],
+      quotes: [
+        "error",
+        "double",
+        { avoidEscape: true, allowTemplateLiterals: true }
+      ],
+      semi: ["error", "always"],
       "no-console": "warn",
       "no-debugger": "error"
     }
