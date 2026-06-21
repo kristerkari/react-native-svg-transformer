@@ -34,7 +34,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^7.2.1",
     "husky": "^9.0.11",
-    "lint-staged": "^16.1.2",
+    "lint-staged": "^17.0.4",
     "prettier": "^3.0.0"
   },
   "lint-staged": {
