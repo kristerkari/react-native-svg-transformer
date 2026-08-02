@@ -1,20 +1,21 @@
+const neostandardReplica = require("./neostandard-replica.cjs");
+const stylistic = require("@stylistic/eslint-plugin");
+
 module.exports = [
+  neostandardReplica,
   {
-    languageOptions: {
-      ecmaVersion: 2021,
-      sourceType: "script"
+    name: "project/style",
+    plugins: {
+      "@stylistic": stylistic
     },
     rules: {
-      eqeqeq: ["error", "always", { null: "ignore" }],
-      indent: ["error", 2],
-      quotes: [
+      "@stylistic/indent": ["error", 2],
+      "@stylistic/quotes": [
         "error",
         "double",
-        { avoidEscape: true, allowTemplateLiterals: true }
+        { avoidEscape: true, allowTemplateLiterals: "always" }
       ],
-      semi: ["error", "always"],
-      "no-console": "warn",
-      "no-debugger": "error"
+      "@stylistic/semi": ["error", "always"]
     }
   }
 ];
