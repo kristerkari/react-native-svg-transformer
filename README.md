@@ -97,9 +97,8 @@ const { assetExts, sourceExts } = defaultConfig.resolver;
  */
 const config = {
   transformer: {
-    babelTransformerPath: require.resolve(
-      "react-native-svg-transformer/react-native"
-    )
+    babelTransformerPath:
+      require.resolve("react-native-svg-transformer/react-native")
   },
   resolver: {
     assetExts: assetExts.filter((ext) => ext !== "svg"),
@@ -127,9 +126,8 @@ module.exports = (async () => {
   } = await getDefaultConfig();
   return {
     transformer: {
-      babelTransformerPath: require.resolve(
-        "react-native-svg-transformer/react-native"
-      )
+      babelTransformerPath:
+        require.resolve("react-native-svg-transformer/react-native")
     },
     resolver: {
       assetExts: assetExts.filter((ext) => ext !== "svg"),
